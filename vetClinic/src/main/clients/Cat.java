@@ -2,10 +2,10 @@ package main.clients;
 
 import java.time.LocalDate;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Goable, Swimable {
     Double discount;
 
-    public Cat(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
+    public Cat(String nickName, Owner owner, LocalDate birthDate, Illness illness, Double discount) {
         super(nickName, owner, birthDate, illness); // todo: сначала конструктор супер-класса
         this.discount = discount;
     }
@@ -31,5 +31,22 @@ public class Cat extends Animal {
     @Override
     public void toFly() {
         System.out.println(getType() + " летать не может!!!");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(getType() + " ест!");
+    }
+
+    @Override
+    public double run() {
+        System.out.println(getType() + " бежит!");
+        return 15;
+    }
+
+    @Override
+    public double swim() {
+        System.out.println(getType() + " плывет!");
+        return 2.5;
     }
 }

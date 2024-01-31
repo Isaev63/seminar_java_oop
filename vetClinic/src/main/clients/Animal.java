@@ -2,7 +2,7 @@ package main.clients;
 
 import java.time.LocalDate;
 
-public class Animal {
+public abstract class Animal {
     // Protected constructor видно в классе и в его наследниках
     protected String nickName;
     protected Owner owner;
@@ -41,12 +41,12 @@ public class Animal {
         this.illness = illness;
     }
 
-    public void lifeCycle() {
-        wakeUp("12:00");
-        hunt();
-        eat();
-        sleep();
-    }
+//    public void lifeCycle() {
+//        wakeUp("12:00");
+//        hunt();
+//        eat();
+//        sleep();
+//    }
 
     public String getType() {
         return getClass().getSimpleName();
@@ -64,9 +64,7 @@ public class Animal {
         System.out.println(getType() + " охотится!");
     }
 
-    private void eat() {
-        System.out.println(getType() + " ест.");
-    }
+    public abstract void eat();
 
     private void sleep() {
         System.out.println(getType() + " спит.");

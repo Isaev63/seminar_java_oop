@@ -2,7 +2,7 @@ package main.clients;
 
 import java.time.LocalDate;
 
-public class Dolphin extends Animal {
+public class Dolphin extends Animal implements Swimable {
     public Dolphin(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickName, owner, birthDate, illness);
     }
@@ -19,5 +19,16 @@ public class Dolphin extends Animal {
     @Override
     public void toFly() {
         System.out.println(getType() + " летать не может!!!");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Дельфин ест!");
+    }
+
+    @Override
+    public double swim() {
+        System.out.println(getType() + " плывет!");
+        return 12.5;
     }
 }
