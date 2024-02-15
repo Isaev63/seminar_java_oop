@@ -1,22 +1,23 @@
 package homework;
 
-public class User{
+public class User {
     private final String name;
+    private final Saver userSaver;
 
-    public User(String name){
+    public User(String name, Saver userSaver) {
         this.name = name;
+        this.userSaver = userSaver;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void save(){
-        Persister persister = new Persister(this);
-        persister.save();
+    public void save() {
+        userSaver.save(this);
     }
 
-    public void report(){
+    public void report() {
         System.out.println("Report for user: " + name);
     }
 }
